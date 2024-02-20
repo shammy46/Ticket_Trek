@@ -5,6 +5,7 @@ let seat = 40;
 for (const btn of allBtn) {
 
 
+
     btn.addEventListener('click', function (e) {
         btn.classList.add('bg-[#1DD100]');
 
@@ -38,44 +39,97 @@ for (const btn of allBtn) {
 
         selectedContainer.appendChild(li);
 
-        const price = p2.innerText;
-        const totalPrice = document.getElementById('total-price').innerText;
-        const convertedTotalPrice = parseInt(totalPrice);
-        const sum = convertedTotalPrice + parseInt(price);
 
-        setInnerText('total-price', sum);
+        totalPrice('total-price', p2);
+        grandTotal();
+
+
         setInnerText('slot-count', slot);
         setInnerText('seat-count', seat);
-        applyCoupon('coupon',sum);
-        
-
-
 
 
 
     });
 }
 
+function totalPrice(id, value) {
+    const price = value.innerText;
+    const totalPrice = document.getElementById('total-price').innerText;
+    const convertedTotalPrice = parseInt(totalPrice);
+    const sum = convertedTotalPrice + parseInt(price);
+    setInnerText('total-price', sum);
+
+}
+
+function grandTotal() {
+    const totalPrice = document.getElementById('total-price').innerText;
+    const convertedTotalPrice = parseInt(totalPrice);
+    
+
+    const applyBtn = document.getElementById('apply-confirm');
+    applyBtn.addEventListener('keyup', function (event) {
+        const text = event.target.value;
+        const applyButton = document.getElementById('btn-apply');
+
+        if (text === 'NEW 15') {
+            applyButton.removeAttribute('disabled');
+            applyButton.onclick = function () {
+                setInnerText('grand-total', convertedTotalPrice - 0.15);
+                hideElement('couponField');
+
+            }
+
+        }
+        else if(text==='Couple 20'){
+           applyButton.removeAttribute('disabled');
+            applyButton.onclick = function () {
+                setInnerText('grand-total', convertedTotalPrice - 0.20);
+                hideElement('couponField');
+
+            }
+        }
+        else{
+            setInnerText('grand-total', convertedTotalPrice);
+        }
+
+
+
+    });
+}
+
+function hideElement(elementID) {
+    const element = document.getElementById(elementID);
+    element.classList.add("hidden");
+}
+
+function showElement(elementID) {
+    const element = document.getElementById(elementID);
+    element.classList.remove("hidden");
+}
+
+
+
+
+
+
+
+
+
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
 
-function applyCoupon(id, value) {
-    document.getElementById('delete-confirm').addEventListener('keyup', function (event) {
+function applyCoupon() {
+    document.getElementById('apply-confirm').addEventListener('keyup', function (event) {
         const text = event.target.value;
-        const deleteButton = document.getElementById('btn-delete');
+        const deleteButton = document.getElementById('btn-apply');
         const coupon1 = 'NEW 15';
         const coupon2 = 'Couple 20';
 
         if (text === coupon1 || text === coupon2) {
             deleteButton.removeAttribute('disabled');
-            document.getElementById('btn-delete').addEventListener('click', function () {
-                const total = document.getElementById(id);
-                total = value - 0.15;
 
 
-
-            });
 
 
         }
@@ -88,15 +142,6 @@ function applyCoupon(id, value) {
 
 }
 
-function hideElement(elementID) {
-    const element = document.getElementById(elementID);
-    element.classList.add("hidden");
-}
-
-function showElement(elementID) {
-    const element = document.getElementById(elementID);
-    element.classList.remove("hidden");
-}
 
 
 
