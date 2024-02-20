@@ -8,3 +8,13 @@
 .font-inter{
     font-family: "Inter", sans-serif;
 }
+
+
+.selected-slot-container{
+    
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+}
