@@ -3,19 +3,26 @@
 const allBtn = document.getElementsByClassName('add-btn');
 let slot = 0;
 let seat = 40;
+let selected = 0;
+const maxSelection = 4;
+
+
 
 
 for (const btn of allBtn) {
     btn.addEventListener('click', function (e) {
 
-        if (allBtn.length >= 4) {
+        if (selected<maxSelection) {
             btn.classList.add('bg-[#1DD100]');
+            selected++;
+
             slot = slot + 1;
-            //document.getElementById('slot-count').innerText = slot;
             seat = seat - 1;
-            //document.getElementById('seat-count').innerText = seat;
-            const slotName = e.target.parentNode.childNodes[3].innerText;
+            
+            const slotName = e.target.innerText;
             console.log(slotName);
+
+            
 
 
 
@@ -109,7 +116,7 @@ function details() {
             }
         }
     });
-    
+
 
     /*const inputField = document.getElementsByClassName('inputs');
     inputField.addEventListener('keyup', function(event){
@@ -128,7 +135,7 @@ function details() {
 
     }); */
 
-    
+
 }
 
 
