@@ -78,7 +78,7 @@ function grandTotal() {
         if (text === 'NEW 15') {
             applyButton.removeAttribute('disabled');
             applyButton.onclick = function () {
-                setInnerText('grand-total', convertedTotalPrice - 100 * 0.15);
+                setInnerText('grand-total', convertedTotalPrice * 0.15);
                 hideElement('couponField');
 
             }
@@ -87,7 +87,7 @@ function grandTotal() {
         else if (text === 'Couple 20') {
             applyButton.removeAttribute('disabled');
             applyButton.onclick = function () {
-                setInnerText('grand-total', convertedTotalPrice - 100 * 0.20);
+                setInnerText('grand-total', convertedTotalPrice * 0.20);
                 hideElement('couponField');
 
             }
