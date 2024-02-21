@@ -12,5 +12,5 @@ function removeBackgroundColor(elementID) {
 
 function slotSelected(){
     const selectedSlot = document.getElementsByClassName('add-btn')
-    
+   
 }

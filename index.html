@@ -188,7 +188,10 @@
                             <p class="text-[#1DD100]"><i class="fa-solid fa-car"></i> Selected</p>
                         </div>
                         <hr>
-                        <button class="btn "><img src="images/wheel.svg" alt=""></button>
+                        <div class="flex justify-between px-5">
+                            <h1></h1>
+                            <button class="btn px-10 "><img src="images/wheel.svg" alt=""></button>
+                        </div>
                         <div class="p-5 space-y-6 font-inter">
                             <div class="flex justify-between ">
                                 <h2>A</h2>
@@ -217,6 +220,54 @@
                                 <button id="D1" class="add-btn btn w-28">D2</button>
                                 <button id="D1" class="add-btn btn w-28">D3</button>
                                 <button id="D1" class="add-btn btn w-28">D4</button>
+                            </div>
+
+                            <div class="flex justify-between ">
+                                <h2>E</h2>
+                                <button id="E1" class="add-btn btn w-28">E1</button>
+                                <button id="E1" class="add-btn btn w-28">E2</button>
+                                <button id="E1" class="add-btn btn w-28">E3</button>
+                                <button id="E1" class="add-btn btn w-28">E4</button>
+                            </div>
+
+                            <div class="flex justify-between ">
+                                <h2>F</h2>
+                                <button id="F1" class="add-btn btn w-28">F1</button>
+                                <button id="F1" class="add-btn btn w-28">F2</button>
+                                <button id="F1" class="add-btn btn w-28">F3</button>
+                                <button id="F1" class="add-btn btn w-28">F4</button>
+                            </div>
+
+                            <div class="flex justify-between ">
+                                <h2>G</h2>
+                                <button id="G1" class="add-btn btn w-28">G1</button>
+                                <button id="G1" class="add-btn btn w-28">G2</button>
+                                <button id="G1" class="add-btn btn w-28">G3</button>
+                                <button id="G1" class="add-btn btn w-28">G4</button>
+                            </div>
+
+                            <div class="flex justify-between ">
+                                <h2>H</h2>
+                                <button id="H1" class="add-btn btn w-28">H1</button>
+                                <button id="H1" class="add-btn btn w-28">H2</button>
+                                <button id="H1" class="add-btn btn w-28">H3</button>
+                                <button id="H1" class="add-btn btn w-28">H4</button>
+                            </div>
+
+                            <div class="flex justify-between ">
+                                <h2>I</h2>
+                                <button id="I1" class="add-btn btn w-28">I1</button>
+                                <button id="I1" class="add-btn btn w-28">I2</button>
+                                <button id="I1" class="add-btn btn w-28">I3</button>
+                                <button id="I1" class="add-btn btn w-28">I4</button>
+                            </div>
+
+                            <div class="flex justify-between ">
+                                <h2>J</h2>
+                                <button id="J1" class="add-btn btn w-28">J1</button>
+                                <button id="J1" class="add-btn btn w-28">J2</button>
+                                <button id="J1" class="add-btn btn w-28">J3</button>
+                                <button id="J1" class="add-btn btn w-28">J4</button>
                             </div>
 
                         </div>
@@ -261,7 +312,7 @@
 
                                 <p class="font-semibold">BDT <span id="total-price">0</span></p>
                             </div>
-                            <div id="couponField" >
+                            <div id="couponField">
                                 <div class="bg-white  w-[500px] rounded-2xl flex justify-between p-2 mx-auto">
                                     <input type="text" name="" id="apply-confirm" placeholder="Have any coupon?">
                                     <button id="btn-apply" class="btn w-28  text-white bg-[#1DD100] rounded-2xl"
@@ -270,7 +321,7 @@
 
                             </div>
 
-                            
+
                             <div class="flex justify-between p-2">
                                 <p class="font-semibold">Grand Price</p>
 
@@ -282,19 +333,19 @@
                         </div>
 
                         <p class="font-semibold ">Passenger Name*</p>
-                        <input class="border-2 border-gray-300 w-full p-5 rounded-xl" type="text" name="" id=""
-                            placeholder="Enter your name">
+                        <input class="inputs border-2 border-gray-300 w-full p-5 rounded-xl" type="text" name=""
+                            id="name" placeholder="Enter your name">
                         <p class="font-semibold ">Phone Number*</p>
 
-                        <input class="border-2 border-gray-300 w-full p-5 rounded-xl" type="number" name="" id=""
-                            placeholder="Enter your phone number">
+                        <input class="inputs border-2 border-gray-300 w-full p-5 rounded-xl" type="number" name=""
+                            id="number" placeholder="Enter your phone number">
                         <p class="font-semibold ">Email ID</p>
-                        <input class="border-2 border-gray-300 w-full p-5 rounded-xl" type="email" name="" id=""
-                            placeholder="Enter your email id">
+                        <input class="inputs border-2 border-gray-300 w-full p-5 rounded-xl" type="email" name=""
+                            id="email" placeholder="Enter your email id">
 
 
-                        <button class="btn btn w-full rounded-xl bg-[#1DD100] text-white"
-                            onclick="my_modal_1.showModal()">Next</button>
+                        <button id="details" class="btn btn w-full rounded-xl bg-[#1DD100] text-white"
+                            disabled>Next</button>
                         <dialog id="my_modal_1" class="modal">
                             <div class="modal-box justify-center text-center mx-auto space-y-5">
                                 <img class="object-right px-44 justify-center " src="images/success.png" alt="">
